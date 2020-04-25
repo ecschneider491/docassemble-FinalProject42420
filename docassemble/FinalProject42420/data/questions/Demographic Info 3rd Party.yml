@@ -1,0 +1,57 @@
+objects:
+  - tp: Individual
+---
+continue button field: ran_interview_file_Demographic_tp_logic
+---                     
+question: | 
+  What is the detainee's name? 
+fields:
+  - First name: tp.name.first 
+  - Middle name: tp.name.middle
+    required: False
+  - Last name: tp.name.last
+  - Maiden name: tp.name.maiden
+    required: False
+  - Aliases: tp.name.alias
+    required: False  
+---
+question: |
+  What is the detainee's date of birth?
+fields:
+  - no label: tp.birthdate
+    datatype: date
+---
+question: | 
+  What is the detainee's gender? 
+field: tp.gender
+buttons: 
+  - Male
+  - Female
+  - Prefer not to answer
+---
+question: |
+  What is the detainee's home address? 
+fields:
+  - Address: tp.address.address
+    required: False
+  - Unit: tp.address.unit
+    required: False
+  - City: tp.address.city
+  - State: tp.address.state
+    code: states_list()
+  - Zip Code: tp.address.zip
+    required: False
+---
+question: |
+  If known, please provide the detainee's contact information so that we can get in touch with him/her:
+subquestion: |
+  If the detainee does not have one or more of the below contact methods, please fill information for the methods that apply.
+fields:
+  - Mobile phone: tp.phone_number_mobile
+    required: False
+  - Home phone: tp.phone_number_home
+    required: False
+  - Email Address: tp.email 
+    required: False
+  - What is your preferred contact method: preferred_conact_method
+---

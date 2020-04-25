@@ -1,0 +1,34 @@
+---
+question: |
+  Is this appointment different from your regular ICE Check-In?
+yesno: same_as_regular_checkin
+---
+question: |
+  On what date are you scheduled to appear?
+fields:
+  - Date: date_to_appear
+    datatype: date
+---
+question: |
+  On what date did you receive the letter?
+fields:
+  - Date: date_letter_received
+    datatype: date
+---
+question: |
+  Where is the hearing scheduled to take place?
+fields:
+  - no label: location_of_hearing
+---
+question: |
+  Does the letter provide a reason for appointment?
+yesno: reason_for_appointment_exists
+---
+question: |
+  Please explain.
+subquestion: |
+  Example: Your release is revoked and you are instructed to report to a local ICE office for an identity information and detention for the execution of your final order of removal.
+fields:
+  - no label: letter_reason_description
+    input type: area
+---
